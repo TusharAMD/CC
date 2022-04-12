@@ -5,7 +5,7 @@ import axios from 'axios';
 
 const Arts = () => {
 	
-	const [arts1,setArts] = useState([]);
+	const [arts,setArts] = useState([]);
 	const [update,setUpdate] = useState(false);
 	useEffect(() => {
 		axios.get(`https://shielded-wave-13203.herokuapp.com/api/arts`)
@@ -13,12 +13,12 @@ const Arts = () => {
         //console.log(res.data)
 		setArts(res.data)
 		setUpdate(true)
-		console.log(arts1)
+		console.log(arts)
       })
 		
 	  },[update]);
 	
-	let arts = [1,2,3]
+	//let arts = [1,2,3]
 	
 	
     // const [loading, setLoading] = useState(false)
@@ -36,7 +36,7 @@ const Arts = () => {
             {arts.map((art, i) => {
                 return (
                     <div className="col-md-3 my-5" key={i}>
-                        <ArtItem art={art} />
+			<ArtItem art={art} i={i} />
                     </div>
                 )
             })}

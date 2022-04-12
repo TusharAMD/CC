@@ -5,7 +5,7 @@ import logo from '../Components/1.jpg'
 const ArtItem = (art,i) => {
     return (
         <div className="container">
-		{JSON.stringify(art)}
+		{JSON.stringify(art.art.img)}
             <div className="card" style={{ width: "18rem" }}>
                 <img className="card-img-top" src={art.art.img} alt="" />
                 <div className="card-body">

@@ -36,7 +36,7 @@ const Arts = () => {
             {arts.map((art, i) => {
                 return (
                     <div className="col-md-3 my-5" key={i}>
-                        <ArtItem art={art} />
+						<ArtItem art={art} i={i} />
                     </div>
                 )
             })}
