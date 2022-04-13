@@ -29,7 +29,8 @@ const ArtItem = (art,i) => {
                     {/* <p className="card-text"><small className="text-muted">Updated On {new Date().toLocaleString()}</small></p> */}
                     <Link role='button' to={`/art/${art.art._id}`} className="btn btn-sm btn-dark ">View</Link>
                     <span className="mx-5">
-                        <i onClick={(e)=>onlikehandler(e)} className="far fa-solid fa-thumbs-up " style={{ cursor: "pointer" }} ></i>
+                        <i onClick={(e)=>onlikehandler(e)} className="far fa-solid fa-thumbs-up " style={{ cursor: "pointer" }} ></i><br />
+                        <i className="fa fa-trash" aria-hidden="true"></i>
                         <p>{art.art.likes.length} likes</p>
                     </span>
                 </div>
