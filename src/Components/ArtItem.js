@@ -16,7 +16,7 @@ const ArtItem = (art,i) => {
       })
     }
     function ontrashhandler(e){
-		axios.get(`https://shielded-wave-13203.herokuapp.com/api/arts/${art.art._id}/${user.nickname}`)
+		axios.delete(`https://shielded-wave-13203.herokuapp.com/api/arts/${art.art._id}/${user.nickname}`)
       .then(res => {
         console.log(res)
       })
