@@ -28,7 +28,7 @@ const ArtItem = (art,i) => {
             <div className="card" style={{ width: "18rem" }}>
                 <img className="card-img-top" src={art.art.img} alt="" />
                 <div className="card-body">
-                    <h5 className="card-title">By {art.art.user_name}<span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{art.art.createdAt}
+                    <h5 className="card-title">By {art.art.user_name}<span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{new Date(art.art.createdAt).toLocaleDateString()}
                     </span></h5>
                     <br />
                     {/* <p className="card-text"><small className="text-muted">Updated On {new Date().toLocaleString()}</small></p> */}
