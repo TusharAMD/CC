@@ -62,3 +62,48 @@
     transform: rotate(360deg);
   }
 }
+
+.createhead{
+    font-size:50px;
+    display:flex;
+    flex-direction:column;
+
+    align-items: center;
+}
+.uploadbox{
+    height:50px;
+    width:60vw;
+    font-size:30px;
+    color:white;
+    background-color:rgb(100,100,100);
+}
+.createhead button{
+    height:40px;
+    font-size:20px;
+}
+.comments {
+    border: 4px dotted black;
+    display:flex;
+    width:100%;
+    padding:10px;
+    margin:10px;
+}
+.commentName{
+    flex-grow:20%;
+    width: 20%;
+}
+.commentContent{
+    flex-grow:20%;
+    width: 50%;
+}
+.commentTime{
+    width: 30%;
+}
+.commentbox span{
+    background-color:rgb(100,20,50);
+    color:white;
+    width:100%;
+    padding:10px;
+    border-radius:30px;
+    
+}

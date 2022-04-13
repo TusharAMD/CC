@@ -9,6 +9,7 @@ import Home from './Components/Home';
 import Arts from './Components/Arts';
 import ArtDetail from './Components/ArtDetail';
 import Profile from './Components/Profile';
+import Create from './Components/Create';
 
 function App() {
   return (
@@ -27,6 +28,9 @@ function App() {
           </Route>
           <Route exact path="/profile">
             <Profile />
+          </Route>
+          <Route exact path="/create">
+            <Create />
           </Route>
         </Switch>
       </Router>

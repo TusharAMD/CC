@@ -1,10 +1,30 @@
 import React from 'react'
 import { useAuth0 } from '@auth0/auth0-react'
 import ArtItem from './ArtItem';
+import { useEffect, useState } from 'react'
+import axios from 'axios';
 
 const Profile = () => {
-    const { user } = useAuth0();
-    const arts = [1, 2, 3, 4, 5, 6];
+    
+    const [arts,setArts] = useState([]);
+	const [update,setUpdate] = useState(false);
+    const { user, isAuthenticated, isLoading } = useAuth0();
+    const nickname = user.nickname
+    console.log(user)
+	useEffect(() => {
+        if(!isLoading){
+		axios.get(`https://shielded-wave-13203.herokuapp.com/api/arts/user/${nickname}`)
+      .then(res => {
+        //console.log(res.data)
+		setArts(res.data)
+		setUpdate(true)
+		console.log(arts)
+        })}
+		
+	  },[update]);
+    
+    console.log(isLoading)
+    if (!isLoading){
     return (
         <div>
             <br />
@@ -26,6 +46,7 @@ const Profile = () => {
             </div>
         </div>
     )
+}
 }
 
 export default Profile

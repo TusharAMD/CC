@@ -6,8 +6,9 @@ import LogoutButton from './LogoutButton';
 import logo from '../Components/1.jpg'
 
 const Navbar = () => {
-    const { user, isAuthenticated } = useAuth0();
+    const { user, isLoading, isAuthenticated } = useAuth0();
     const location = useLocation();
+    if (!isLoading){
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -25,12 +26,15 @@ const Navbar = () => {
                             <li className="nav-item">
                                 <Link className={`nav-link ${location.pathname === "/about" ? "active" : ""}`}  to="/about">About</Link>
                             </li>
+                            <li className="nav-item">
+                                <Link className={`nav-link ${location.pathname === "/create" ? "active" : ""}`}  to="/create">Create</Link>
+                            </li>
                         </ul>
                         {
                             isAuthenticated ?
                                 <div className='d-flex'>
                                     <li className='nav-item dropdown'>
-                                        <img src={logo} style={{ height: 40, borderRadius: 100, position: 'relative', left: -10 }} className='dropdown-toggle' id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" alt="" />
+                                        <img src={user.picture} style={{ height: 40, borderRadius: 100, position: 'relative', left: -10 }} className='dropdown-toggle' id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" alt="" />
                                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                             <li><LogoutButton /></li>
                                         </ul>
@@ -46,7 +50,7 @@ const Navbar = () => {
                 </div>
             </nav>
         </div>
-    )
+    )}
 }
 
 export default Navbar
