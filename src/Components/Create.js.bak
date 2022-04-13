@@ -12,6 +12,7 @@ const Create = () => {
     const [imgurl,setImgurl] = useState("")
     const { user, isAuthenticated, isLoading } = useAuth0();
     const nickname = user.nickname
+	const [verified,setVerified] = useState(true)
     
     function onchangehandler(e){
         setImgurl(e.target.value)
@@ -24,20 +25,26 @@ const Create = () => {
         setImgurl("")
       })
     }
-    function onChangeRecap(){
-		
+    function onChangeRecap(e){
+		console.log(e)
+		setVerified(false)
 	}
 	
     return(
     <div>
         <div className="createhead">Upload Your Art
         
-         <div className="uploadbox"><input value={imgurl} onChange={(e)=>onchangehandler(e)} placeholder="Enter your Image Link" /></div>
-         <ReCAPTCHA
-			sitekey="Your client site key"
-			onChange={onChangeRecap}
-		  />
-		 <button onClick={(e)=>onSubmitHandler(e)}>Submit</button>
+         <div className="uploadbox"><input value={imgurl} onChange={(e)=>onchangehandler(e)} placeholder="Enter your Image Link" />
+		 
+		 
+		 </div>
+		 <div>
+		 <ReCAPTCHA
+			sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+			onChange={(e)=>onChangeRecap(e)}
+		  /></div>
+         
+		 <button disabled = {verified} onClick={(e)=>onSubmitHandler(e)}>Submit</button>
         </div>
        
     </div>
