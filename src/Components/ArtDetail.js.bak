@@ -50,7 +50,7 @@ const ArtDetail = () => {
   return (
     <div>
         <section className="heading">
-            <img className="artdetailimg" src={img} alt="" />
+            <img src={img} alt="" />
         </section>
         <br /> <br />
         <section className="commentsection">
