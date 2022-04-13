@@ -119,5 +119,5 @@
 	flex-direction:center;
 	justify-content:center;
 	font-size:40px;
-	font-family: 'Updock', cursive;
+	font-family: 'Nunito', sans-serif;
 }
