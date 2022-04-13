@@ -15,7 +15,12 @@ const ArtItem = (art,i) => {
         console.log(res)
       })
     }
-    
+    function ontrashhandler(e){
+		axios.get(`https://shielded-wave-13203.herokuapp.com/api/arts/${art.art._id}/{user.nickname}`)
+      .then(res => {
+        console.log(res)
+      })
+	}
     
     return (
         <div className="container">
@@ -30,7 +35,7 @@ const ArtItem = (art,i) => {
                     <Link role='button' to={`/art/${art.art._id}`} className="btn btn-sm btn-dark ">View</Link>
                     <span className="mx-5">
                         <i onClick={(e)=>onlikehandler(e)} className="far fa-solid fa-thumbs-up " style={{ cursor: "pointer" }} ></i><br />
-                        <i className="fa fa-trash" aria-hidden="true"></i>
+                        <i onClick={(e)=>ontrashhandler(e)} className="fa fa-trash" aria-hidden="true" style={{ cursor: "pointer" }}></i>
                         <p>{art.art.likes.length} likes</p>
                     </span>
                 </div>
