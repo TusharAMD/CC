@@ -34,7 +34,7 @@ const Create = () => {
         
          <div className="uploadbox"><input value={imgurl} onChange={(e)=>onchangehandler(e)} placeholder="Enter your Image Link" /></div>
          <ReCAPTCHA
-			sitekey="6Lccmm0fAAAAAPVxC1MtAn6Mqk-V21CPLUs2MMCO"
+			sitekey="Your client site key"
 			onChange={onChangeRecap}
 		  />
 		 <button onClick={(e)=>onSubmitHandler(e)}>Submit</button>
